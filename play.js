@@ -1,15 +1,22 @@
+// requires net
+
+const net = require("net");
+
 // requires connect function from client.js sheet
 
-let connect = require('./client.js')
+let connect = require('./client.js');
 
-//requires net
+// requires setupInput function
 
-const net = require("net")
+let setupInput = require('./input.js');
 
 // tells client that they are connecting to server
 
 console.log("Connecting ...");
 
-//runs connect function, required from client.js (see client.js for function)
+// calls setupInput function defined in input.js
 
-connect();
+//
+
+let conn = connect();
+setupInput(conn);
